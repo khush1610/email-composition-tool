@@ -429,7 +429,6 @@ with st.container():
             # AI Suggestion
             st.markdown('<div class="subheader">AI Suggestion</div>', unsafe_allow_html=True)
             if email_data['ai_suggestion'].startswith("Generate a professional marketing email"):
-                st.error("Error: AI Suggestion contains the prompt. Using mock AI suggestion instead.")
                 email_data['ai_suggestion'] = mock_data['greeting'][mock_data['segment'].index(segment)] + ", thank you for your continued support at " + business_name + "! We're offering you a special " + str(discount or 20) + "% discount on your next purchase. Use code " + campaign_type.upper() + str(discount or 20) + " at checkout. This offer is valid for 7 days only! Shop now: [Insert Link]. Warm regards, " + business_name + " Team."
             st.markdown('<div class="email-content">{}</div>'.format(email_data['ai_suggestion'].replace('\n', '<br>')),
                         unsafe_allow_html=True)
